@@ -82,23 +82,6 @@ SELECT COUNT(*) FROM company_dim;
 
 ---------------------------------------------------
 
-CREATE INDEX idx_job_title_short
-ON job_postings_fact (job_title_short);
-
-CREATE INDEX idx_job_remote
-ON job_postings_fact (job_work_from_home);
-
-CREATE INDEX idx_salary
-ON job_postings_fact (salary_year_avg);
-
-CREATE INDEX idx_sj_job
-ON skills_job_dim (job_id);
-
-CREATE INDEX idx_sj_skill
-ON skills_job_dim (skill_id);
-
----------------------------------------------------------------------------------
-
 SELECT j.job_title, c.name
 FROM job_postings_fact j
 JOIN company_dim c
