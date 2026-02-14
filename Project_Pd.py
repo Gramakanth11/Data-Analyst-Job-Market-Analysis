@@ -2,25 +2,26 @@ import pandas as pd
 from sqlalchemy import create_engine
 from urllib.parse import quote_plus
 from sqlalchemy import text
-# 🔴 PUT YOUR REAL MYSQL PASSWORD HERE (with @ in it)
-RAW_PASSWORD = "Chinna@11"
 
-# ✅ Encode password (this is mandatory)
+# PUT YOUR REAL MYSQL PASSWORD HERE (with any symbol in it)
+RAW_PASSWORD = "Your_Password"
+
+# Encode password
 ENCODED_PASSWORD = quote_plus(RAW_PASSWORD)
 
-# ✅ Build connection string
+# Build connection string
 DATABASE_URL = (
     f"mysql+pymysql://root:{ENCODED_PASSWORD}"
-    f"@localhost:3306/data_job_analytics"
+    f"@localhost:33/data_job_analytics"
 )
 
 print("DEBUG URL (password hidden):", DATABASE_URL.replace(ENCODED_PASSWORD, "*****"))
 
-# ✅ Try connecting
+# Try connecting
 engine = create_engine(DATABASE_URL)
 
 with engine.connect() as conn:
-    print("✅ CONNECTED TO MYSQL SUCCESSFULLY")
+    print("CONNECTED TO MYSQL SUCCESSFULLY")
 
 
 # -------------------------------------------------
@@ -52,7 +53,6 @@ jobs["job_posted_date"] = pd.to_datetime(
 )
 
 
-
 jobs.to_sql(
     "job_postings_fact",
     con=engine,
@@ -62,7 +62,7 @@ jobs.to_sql(
     method = 'multi'
 )
 
-print("✅ job_postings_fact loaded")
+print("job_postings_fact loaded")
 
 # -------------------------------------------------
 # 3. Load skills_dim
@@ -76,7 +76,7 @@ skills.to_sql(
     index=False
 )
 
-print("✅ skills_dim loaded")
+print("skills_dim loaded")
 
 # -------------------------------------------------
 # 4. Load skills_job_dim
@@ -90,7 +90,7 @@ skills_jobs.to_sql(
     index=False
 )
 
-print("✅ skills_job_dim loaded")
+print("skills_job_dim loaded")
 
 # -------------------------------------------------
 # 5. Load company_dim
@@ -112,10 +112,10 @@ company.to_sql(
     index=False
 )
 
-print("✅ company_dim loaded")
+print("company_dim loaded")
 
 
-print("\n🎯 ALL 4 DATASETS SUCCESSFULLY LOADED INTO MYSQL")
+print("\n ALL 4 DATASETS SUCCESSFULLY LOADED INTO MYSQL")
 
 
 # Row Count Validation (SQL)
@@ -149,6 +149,7 @@ with engine.connect() as conn:
 
     conn.execute(text("CREATE INDEX idx_skill_id ON skills_dim(skill_id)"))
 
-print("✅ Indexes created")
+print(" Indexes created")
+
 
 
