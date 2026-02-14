@@ -35,26 +35,26 @@ This project answers those questions using structured SQL analysis.
 
 ## 📈 SQL Analysis & What Each Query Reveals
 
-1. Job Volume by Role
+1. Job Volume by Role:
 What This Shows:
 - Identifies the most common data-related roles.
 - Helps understand market demand distribution across roles.
 - Example insight: Data Analyst, Data Engineer, and Data Scientist dominate postings.
 
-2. Most In-Demand Skills (For Data Analyst Roles)
+2. Most In-Demand Skills (For Data Analyst Roles):
 What This Shows:
 - Which skills appear most frequently in analyst job postings.
 - Reveals core technical expectations of the market.
 - Example insight: SQL, Excel, Python, and BI tools dominate demand.
 
-3. Highest Paying Skills
+3. Highest Paying Skills:
 What This Shows:
 - Average salary associated with each skill.
 - Identifies premium skills valued by employers.
 - Shows that some skills are high-paying but may not be high-demand.
 
-4. Opportunity Score (Demand × Salary)
-What This Shows:
+4. Opportunity Score (Demand × Salary):
+5. What This Shows:
 - Combines demand and salary into one metric.
 - Identifies skills with strong market demand AND strong pay.
 - Helps prioritize skills for career growth.
