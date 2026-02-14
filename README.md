@@ -72,7 +72,7 @@ Balanced skills provide better long-term market positioning.
 
 ## 🛠 Tech Stack
 
-Python (Pandas, SQLAlchemy) – Data ingestion
-MySQL – Data storage & analytics
-SQL – Business insight generation
-Star-schema modeling approach
+1. Python (Pandas, SQLAlchemy) – Data ingestion
+2. MySQL – Data storage & analytics
+3. SQL – Business insight generation
+4. Star-schema modeling approach
